@@ -16,7 +16,9 @@ const searchStore = useLocationsStore();
 const { getLocation } = searchStore;
 const { searchQuery } = storeToRefs(searchStore);
 const handleKeyup = debounce(async (event) => {
-  if (event.key.length === 1) {
+  const keyLength = event.key.length;
+  const keyCode = event.keyCode;
+  if (keyLength.length === 1 || keyCode === 13 || keyCode === 8 || keyCode===32) {
     await getLocation();
   }
 }, 500);
