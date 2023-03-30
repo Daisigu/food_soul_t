@@ -2,7 +2,7 @@
   <div class="location-card">
     <div class="location-card-header">{{ location.display_name }}</div>
     <div class="location-card-body">
-      <p>Координаты: {{ location.lat }}, {{ location.lon }}</p>
+      <p>Coordinates: {{ location.lat }}, {{ location.lon }}</p>
     </div>
   </div>
 </template>
