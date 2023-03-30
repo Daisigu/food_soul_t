@@ -15,8 +15,10 @@ import debounce from "lodash.debounce";
 const searchStore = useLocationsStore();
 const { getLocation } = searchStore;
 const { searchQuery } = storeToRefs(searchStore);
-const handleKeyup = debounce(async () => {
-  await getLocation();
+const handleKeyup = debounce(async (event) => {
+  if (event.key.length === 1) {
+    await getLocation();
+  }
 }, 500);
 </script>
 
@@ -27,7 +29,7 @@ const handleKeyup = debounce(async () => {
   border: 1px solid lightgray;
   padding: 0.6rem 0.5rem;
   border-radius: 0.25rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:focus {
     outline: none;

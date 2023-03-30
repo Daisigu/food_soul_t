@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import uiSpinner from "./UI/ui-spinner.vue";
+import uiSpinner from "../../shared/components/ui-spinner.vue";
 import locationListItem from "./location-list-item.vue";
 import { useLocationsStore } from "@/stores/location";
 import { storeToRefs } from "pinia";

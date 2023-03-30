@@ -4,10 +4,9 @@
   </div>
 </template>
 <script setup lang="ts">
-
 interface Props {
   loading: boolean;
-  center: boolean;
+  center?: boolean | undefined;
 }
 const props = defineProps<Props>();
 </script>

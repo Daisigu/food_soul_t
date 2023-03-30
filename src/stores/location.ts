@@ -1,16 +1,11 @@
 import { ref, Ref } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios";
-
-interface Location {
-  lat: string;
-  lon: string;
-  display_name: string;
-}
+import Location from "../types/location";
 
 interface LocationsStore {
   searchQuery: Ref<string>;
-  locations: Location[];
+  locations: Ref<Location[]> | [];
   searchLoading: Ref<boolean>;
   getLocation: () => Promise<void>;
 }
@@ -26,7 +21,6 @@ export const useLocationsStore = defineStore(
 
     const getLocation = async () => {
       searchLoading.value = true;
-
       try {
         const { data } = await axios.get<Location[]>(`${SEARCH_URL}`, {
           params: {

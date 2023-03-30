@@ -8,12 +8,7 @@
 </template>
 <script setup lang="ts">
 import { toRefs } from "vue";
-
-interface Location {
-  lat: string;
-  lon: string;
-  display_name: string;
-}
+import Location from "../../types/location";
 interface Props {
   location: Location;
 }
@@ -26,7 +21,7 @@ const { location } = toRefs(props);
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 1rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
     background: rgb(248, 248, 248);
